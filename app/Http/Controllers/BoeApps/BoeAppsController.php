@@ -17,13 +17,13 @@ class BoeAppsController extends Controller {
 		return true;
 	}
 
-	protected function appsGroup() {
+	protected function appGroup() {
 		$this->result = DB::table('apps_group')->get();
 		return $this->result;
 	}
 
 	protected function apps($app_id=array()) {
-		if (count($app_id) > 0) {
+		if (count($app_id) <= 0) {
 			$this->result = DB::table('apps')->get();
 		} else {
 			$this->result = DB::table('apps')->whereIn('id', $app_id)->get();

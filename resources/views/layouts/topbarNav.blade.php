@@ -2,7 +2,7 @@
 <div class="headerbar">
 	<!-- LOGO -->
 	<div class="headerbar-left">
-		<a href="#" class="logo">{{ Html::image('public/assets/images/logo.png') }} <span>BOE Apps</span></a>
+		<a href="#" class="logo">{{ Html::image('public/icons/small-moph-logo.png') }} <span>BOE Apps</span></a>
 	</div>
 	<nav class="navbar-custom">
 		<ul class="list-inline float-right mb-0">

@@ -9,20 +9,23 @@ class indexController extends BoeAppsController {
 	* @return \Illuminate\Http\Response
 	*/
 	public function index() {
-		$appsGroup = $this->getAppsGroup();
+		$boeAppGroup = $this->getAppGroup();
+		$boeApps = parent::apps();
 		return view(
 			'frontend.index',
 			[
-				'appsGroup'=>$appsGroup
+				'boeAppGroup' => $boeAppGroup,
+				'boeApps' => $boeApps
 			]
 		);
 	}
 
-	private function getAppsGroup() {
-		$this->result = parent::appsGroup();
-		return $this->result;
+	private function getAppGroup() {
+		$appGroup = parent::appGroup();
+		$boeAppGroup = $appGroup->keyBy('id');
+		$boeAppGroup->all();
+		return $boeAppGroup;
 	}
-
 	/**
 	* Show the form for creating a new resource.
 	* @return \Illuminate\Http\Response
