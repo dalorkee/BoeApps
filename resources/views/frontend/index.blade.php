@@ -53,11 +53,11 @@ html {
 										@if ($val->group_ref == $value->id)
 											<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
 												<div class="card" style="min-height: 220px;">
-													<a href="{{ $val->app_link }}">
+													<a href="{{ $val->app_link }}" title="{{ $val->name_th }}">
 													{{ Html::image('public/icons/boe_apps/'.$val->icon_name, 'alt=R506', ['class'=>'card-img-top']) }}
 													</a>
 													<div class="card-body">
-														<h4 class="card-title">{{ $val->desc }}</h4>
+														<h4 class="card-title"><a href="{{ $val->app_link }}" title="{{ $val->name_th }}">{{ $val->desc }}</a></h4>
 														<p class="card-text"></p>
 													</div>
 												</div>

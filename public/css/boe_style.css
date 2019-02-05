@@ -1,0 +1,30 @@
+@font-face {
+	font-family: 'Prompt';
+	src: url('../fonts/prompt-regular-webfont.eot');
+	src: url('../fonts/prompt-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/prompt-regular-webfont.woff2') format('woff2'),
+		 url('../fonts/prompt-regular-webfont.woff') format('woff'),
+		 url('../fonts/prompt-regular-webfont.ttf') format('truetype'),
+		 url('../fonts/prompt-regular-webfont.svg#promptregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'kanitregular';
+	src: url('../fonts/kanit-regular-webfont.woff2') format('woff2'),
+		 url('../fonts/kanit-regular-webfont.woff') format('woff'),
+		 url('../fonts/kanit-regular-webfont.ttf') format('truetype'),
+		 url('../fonts/kanit-regular-webfont.svg#kanitregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+.card {
+	font-family: 'kanitregular' !important;
+}
+h4[class=card-title] {
+	font-smooth: always;
+	font-size: 1.20em !important;
+	line-height: 1.40em;
+	color: #736B6B;
+}

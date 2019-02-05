@@ -12,7 +12,7 @@
 						<ul class="list-unstyled">
 							@foreach ($boeApps as $item => $val)
 								@if ($val->group_ref == $value->id)
-									<li><a href="account.php?page=pro-slider">{{ $val->name_en }}</a></li>
+									<li><a href="{{ $val->app_link }}"><i class="fa fa-angle-double-right" aria-hidden="true" style="font-size:.80em;margin:0;padding:0;"></i> {{ $val->name_en }}</a></li>
 								@endif
 							@endforeach
 						</ul>

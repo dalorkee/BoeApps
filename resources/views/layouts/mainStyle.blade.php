@@ -9,4 +9,5 @@
 <!-- Font ionicons CSS -->
 {{ Html::style('public/assets/plugins/ionicons-2.0.1/css/ionicons.min.css') }}
 <!-- Custom CSS -->
-{{ Html::style('public//assets/css/style.css') }}
+{{ Html::style('public/assets/css/style.css') }}
+{{ Html::style('public/css/boe_style.css') }}
