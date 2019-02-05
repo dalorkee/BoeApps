@@ -22,7 +22,7 @@
 		@include('layouts.footer')
 	</div>
 	<!-- END main -->
-	@include('layouts.mainFootscript')
+	@include('layouts.mainFootScript')
 	@yield('customScript')
 </body>
 </html>
