@@ -3,7 +3,7 @@ namespace App\Http\Controllers\BoeApps;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Session;
+use Session;
 
 class indexController extends BoeAppsController {
 	/**
@@ -13,12 +13,12 @@ class indexController extends BoeAppsController {
 	public function index() {
 		$boeAppGroup = $this->getAppGroup();
 		$boeApps = $this->getApps();
-		//Session::put('boeAppGroup', $boeAppGroup);
+		//$file_upload = $this->getFiles();
+		Session::put('boeAppGroup', $boeAppGroup);
 		return view(
 			'frontend.index',
 			[
 				'page' => 'home',
-				'boeAppGroup' => $boeAppGroup,
 				'boeApps' => $boeApps
 			]
 		);
