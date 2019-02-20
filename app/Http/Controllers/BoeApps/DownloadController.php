@@ -4,7 +4,7 @@ namespace App\Http\Controllers\BoeApps;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Session;
+use Illuminate\Support\Facades\Session;
 use App\Download;
 
 class DownloadController extends BoeAppsController
