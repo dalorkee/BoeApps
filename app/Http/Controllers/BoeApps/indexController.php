@@ -2,6 +2,8 @@
 namespace App\Http\Controllers\BoeApps;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Session;
 
 class indexController extends BoeAppsController {
 	/**
@@ -10,11 +12,13 @@ class indexController extends BoeAppsController {
 	*/
 	public function index() {
 		$boeAppGroup = $this->getAppGroup();
-		$boeApps = parent::apps();
+		$boeApps = $this->getApps();
+		//$file_upload = $this->getFiles();
+		Session::put('boeAppGroup', $boeAppGroup);
 		return view(
 			'frontend.index',
 			[
-				'boeAppGroup' => $boeAppGroup,
+				'page' => 'home',
 				'boeApps' => $boeApps
 			]
 		);
@@ -26,6 +30,11 @@ class indexController extends BoeAppsController {
 		$boeAppGroup->all();
 		return $boeAppGroup;
 	}
+
+	private function getApps() {
+		return $this->result = parent::apps();
+	}
+
 	/**
 	* Show the form for creating a new resource.
 	* @return \Illuminate\Http\Response

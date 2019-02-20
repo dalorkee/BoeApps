@@ -1,30 +1,48 @@
+/* thai */
 @font-face {
-	font-family: 'Prompt';
-	src: url('../fonts/prompt-regular-webfont.eot');
-	src: url('../fonts/prompt-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/prompt-regular-webfont.woff2') format('woff2'),
-		 url('../fonts/prompt-regular-webfont.woff') format('woff'),
-		 url('../fonts/prompt-regular-webfont.ttf') format('truetype'),
-		 url('../fonts/prompt-regular-webfont.svg#promptregular') format('svg');
-	font-weight: normal;
+	font-family: 'Kanit';
 	font-style: normal;
+	font-weight: 400;
+	src: local('Kanit Regular'), local('Kanit-Regular'), url('../fonts/kanit-regular-th.woff2') format('woff2');
+	unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
 }
+/* latin-ext */
 @font-face {
-	font-family: 'kanitregular';
-	src: url('../fonts/kanit-regular-webfont.woff2') format('woff2'),
-		 url('../fonts/kanit-regular-webfont.woff') format('woff'),
-		 url('../fonts/kanit-regular-webfont.ttf') format('truetype'),
-		 url('../fonts/kanit-regular-webfont.svg#kanitregular') format('svg');
-	font-weight: normal;
+	font-family: 'Kanit';
 	font-style: normal;
-
+	font-weight: 400;
+	src: local('Kanit Regular'), local('Kanit-Regular'), url(../fonts/kanit-regular-latin-ext.woff2) format('woff2');
+	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-.card {
-	font-family: 'kanitregular' !important;
+/* latin */
+@font-face {
+	font-family: 'Kanit';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Kanit Regular'), local('Kanit-Regular'), url('../fonts/kanit-regular-latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-h4[class=card-title] {
-	font-smooth: always;
-	font-size: 1.20em !important;
-	line-height: 1.40em;
-	color: #736B6B;
+html {
+	scroll-behavior: smooth;
+}
+body {
+	font-family: 'kanit', sans-serif;
+}
+.card-title {
+	font-size: 1em !important;
+}
+.boe-card-title {
+	font-size: .875vw !important;
+}
+.card-text {
+	font-size: .875em !important;
+}
+.main-sidebar {
+	position: fixed !important;
+}
+.big-icon {
+	font-size: 24px;
+}
+a.boe-link {
+	color: red !important;
 }

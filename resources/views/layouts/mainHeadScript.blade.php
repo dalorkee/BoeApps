@@ -4,3 +4,5 @@
 {{ Html::script('public/assets/js/jquery.min.js') }}
 <!-- Moment -->
 {{ Html::script('publicdemo-pro/assets/js/moment.min.js') }}
+<!-- fancybox -->
+{{ Html::script('public/assets/plugins/fancybox-master/dist/jquery.fancybox.min.js') }}

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
+use Session;
 
 class BoeAppsController extends Controller {
 
@@ -30,4 +31,29 @@ class BoeAppsController extends Controller {
 		}
 		return $this->result;
 	}
+
+	protected function file_upload($apps_ref=array()) {
+		if (count($apps_ref <= 0)) {
+			$this->result = DB::table('downloads')->get();
+		} else {
+			$this->result = DB::table('downloads')->whereIn('apps_ref', $apps_ref)->get();
+		}
+		return $this->result;
+	}
+
+	protected function selectFile($file_id=0) {
+		$this->result = DB::table('downloads')
+			->where('id', $file_id)
+			->get();
+		return $this->result;
+	}
+
+	protected function updateCounterDownloadFile($file_id=0, $count_value=0) {
+		DB::table('downloads')
+			->where('id', $file_id)
+			->update(['download' => $count_value]);
+		return true;
+	}
+
+
 }
