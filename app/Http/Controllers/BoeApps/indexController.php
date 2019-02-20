@@ -13,11 +13,12 @@ class indexController extends BoeAppsController {
 	public function index() {
 		$boeAppGroup = $this->getAppGroup();
 		$boeApps = $this->getApps();
-		Session::put('boeAppGroup', $boeAppGroup);
+		//Session::put('boeAppGroup', $boeAppGroup);
 		return view(
 			'frontend.index',
 			[
 				'page' => 'home',
+				'boeAppGroup' => $boeAppGroup,
 				'boeApps' => $boeApps
 			]
 		);
