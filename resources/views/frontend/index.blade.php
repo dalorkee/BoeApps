@@ -30,28 +30,32 @@
 									@foreach ($boeApps as $appKey => $appVal)
 										@if ($appVal->app_group_ref == $appGroupVal->id)
 											@if ($appVal->status == 'normal')
-											<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
-												<div class="card">
+												<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+													<div class="card">
 
-													<!--if ($appVal->app_group_ref == '4')
-														- create link to download controller -
-														<a href=" URL::route('download', ['id'=>$appVal->id]) }}#dl $appVal->id }}" data-toggle="tooltip" data-html="true" title="<strong> $appVal->desc }}</strong>">
-															 Html::image('public/icons/boe_apps/'.$appVal->icon_name, 'alt=R506', ['class'=>'card-img-top']) }}
-														</a>
-													else -->
-														<!-- create normal banner -->
-														<a href="{{ $appVal->app_link }}" data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>" target="_blank">
-															{{ Html::image('public/icons/boe_apps/'.$appVal->icon_name, 'alt=R506', ['class'=>'card-img-top']) }}
-														</a>
-
-													<!--
-													<div class="card-body">
-														<h4 class="boe-card-title"><a href=" $appVal->app_link }}" title=" $appVal->name_th }}"> $appVal->desc }}</a></h4>
-														<p class="card-text"></p>
+														<!--if ($appVal->app_group_ref == '4')
+															- create link to download controller -
+															<a href=" URL::route('download', ['id'=>$appVal->id]) }}#dl $appVal->id }}" data-toggle="tooltip" data-html="true" title="<strong> $appVal->desc }}</strong>">
+																 Html::image('public/icons/boe_apps/'.$appVal->icon_name, 'alt=R506', ['class'=>'card-img-top']) }}
+															</a>
+														else -->
+															<!-- create normal banner -->
+															<a href="{{ $appVal->app_link }}" data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>" target="_blank">
+																{{ Html::image('public/icons/boe_apps/'.$appVal->icon_name, 'alt=R506', ['class'=>'card-img-top']) }}
+															</a>
+														<!--
+														<div class="card-body">
+															<h4 class="boe-card-title"><a href=" $appVal->app_link }}" title=" $appVal->name_th }}"> $appVal->desc }}</a></h4>
+															<p class="card-text"></p>
+														</div>
+														-->
 													</div>
-													-->
+													@if ($appVal->id == 24)
+														<ul class="list-group list-group-flush">
+															<li class="list-group-item" style="border-top:none;">{{ $appVal->desc }}</li>
+														</ul>
+													@endif
 												</div>
-											</div>
 											@endif
 										@endif
 									@endforeach
