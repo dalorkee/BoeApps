@@ -10,6 +10,6 @@
 {{ Html::style('public/assets/font-awesome/css/font-awesome.min.css') }}
 <!-- Custom CSS -->
 {{ Html::style('public/css/boe_style.css') }}
-{{ Html::style('public/assets/css/style.css&v=1.0') }}
+{{ Html::style('public/assets/css/style.css?v=1.0') }}
 {{ Html::style('public/assets/plugins/fancybox-master/dist/jquery.fancybox.min.css') }}
 <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
