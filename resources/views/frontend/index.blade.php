@@ -53,11 +53,26 @@
 													@if ($appVal->id == 24)
 														<div style="width:100%;">
 														<ul class="list-group list-group-flush" style="width:80%;margin-left:20px;">
-															<li class="list-group-item" style="border-top:none;"><i class="fa fa-angle-right" aria-hidden="true"></i> Software</li>
-															<li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i> Population</li>
-															<li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i> Documents</li>
-															<li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i> Form</li>
-															<li class="list-group-item" style="border-bottom:none;"><i class="fa fa-angle-right" aria-hidden="true"></i> Etc</li>
+															<li class="list-group-item">
+																<i class="fa fa-angle-right" aria-hidden="true"></i>
+																<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab2" target="_blank">&nbsp;โปรแกรมเฝ้าระวัง</a>
+															</li>
+															<li class="list-group-item">
+																<i class="fa fa-angle-right" aria-hidden="true"></i>
+																<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab3" target="_blank">&nbsp;ข้อมูลประชากร</a>
+															</li>
+															<li class="list-group-item">
+																<i class="fa fa-angle-right" aria-hidden="true"></i>
+																<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab4" target="_blank">&nbsp;แบบฟอร์ม</a>
+															</li>
+															<li class="list-group-item">
+																<i class="fa fa-angle-right" aria-hidden="true"></i>
+																<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab5" target="_blank">&nbsp;แบบฟอร์มสอบสวนโรค</a>
+															</li>
+															<li class="list-group-item" style="border-bottom:none;">
+																<i class="fa fa-angle-right" aria-hidden="true"></i>
+																<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab6" target="_blank">&nbsp;EIDSS</a>
+															</li>
 														</ul>
 														</div>
 													@endif
