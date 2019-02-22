@@ -38,10 +38,10 @@
 														</a>
 													else -->
 														<!-- create normal banner -->
-														<a href="{{ $appVal->app_link }}" data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>">
+														<a href="{{ $appVal->app_link }}" data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>" target="_blank">
 															{{ Html::image('public/icons/boe_apps/'.$appVal->icon_name, 'alt=R506', ['class'=>'card-img-top']) }}
 														</a>
-													
+
 													<!--
 													<div class="card-body">
 														<h4 class="boe-card-title"><a href=" $appVal->app_link }}" title=" $appVal->name_th }}"> $appVal->desc }}</a></h4>
