@@ -51,9 +51,15 @@
 														-->
 													</div>
 													@if ($appVal->id == 24)
-														<ul class="list-group list-group-flush">
-															<li class="list-group-item" style="border-top:none;">{{ $appVal->desc }}</li>
+														<div style="width:100%;">
+														<ul class="list-group list-group-flush" style="width:80%;margin-left:20px;">
+															<li class="list-group-item" style="border-top:none;"><i class="fa fa-angle-right" aria-hidden="true"></i> Software</li>
+															<li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i> Population</li>
+															<li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i> Documents</li>
+															<li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i> Form</li>
+															<li class="list-group-item" style="border-bottom:none;"><i class="fa fa-angle-right" aria-hidden="true"></i> Etc</li>
 														</ul>
+														</div>
 													@endif
 												</div>
 											@endif
