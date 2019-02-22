@@ -29,8 +29,10 @@
 								<div class="row">
 									@foreach ($boeApps as $appKey => $appVal)
 										@if ($appVal->app_group_ref == $appGroupVal->id)
+											@if ($appVal->status == 'normal')
 											<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
 												<div class="card">
+
 													<!--if ($appVal->app_group_ref == '4')
 														- create link to download controller -
 														<a href=" URL::route('download', ['id'=>$appVal->id]) }}#dl $appVal->id }}" data-toggle="tooltip" data-html="true" title="<strong> $appVal->desc }}</strong>">
@@ -50,6 +52,7 @@
 													-->
 												</div>
 											</div>
+											@endif
 										@endif
 									@endforeach
 								</div>
