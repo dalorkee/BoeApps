@@ -16,5 +16,6 @@
 });
 */
 Route::get('/', 'BoeApps\indexController@index')->name('home');
-Route::get('/download/{id}', 'BoeApps\DownloadController@index')->name('download');
+Route::get('/download', 'BoeApps\DownloadController@index')->name('download');
 Route::get('/getFile/{id}', 'BoeApps\DownloadController@downloadFile')->name('getFile');
+Route::get('/launch/{id}', 'BoeApps\indexController@launchApp')->name('launch');

@@ -3,6 +3,7 @@ namespace App\Http\Controllers\BoeApps;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\App;
 use Session;
 
 class indexController extends BoeAppsController {
@@ -33,6 +34,11 @@ class indexController extends BoeAppsController {
 
 	private function getApps() {
 		return $this->result = parent::apps();
+	}
+
+	public function launchApp(Request $request) {
+		$apps = App::find($request->id);
+		return redirect($apps->app_link);
 	}
 
 	/**

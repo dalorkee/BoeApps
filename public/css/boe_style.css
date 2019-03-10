@@ -24,9 +24,54 @@
 }
 html {
 	scroll-behavior: smooth;
+	font-size: 100% !important;
 }
 body {
+	font-size: 1em !important;
 	font-family: 'kanit', sans-serif;
+}
+.boe-app-wrapper {
+	padding: 0 0 30px 0 !important;
+	overflow: hidden;
+}
+.boe-app-header h3 {
+	margin: 10px 0;
+	font-size: 1.475em;
+	border-bottom: 2px solid #bbb;
+}
+.boe-app-body {
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+#photo-thumb {
+	float: left;
+	list-style: none;
+	margin: 0 4px;
+	padding: 0;
+}
+#photo-thumb>li {
+	text-align: center;
+	float: left;
+	margin-bottom: 8px;
+}
+#photo-thumb>li img {
+	max-width: 150px;
+	border: solid 1px rgba(255, 255, 255, 1);
+	opacity: .6;
+}
+#photo-thumb>li img:hover {
+	opacity: 1;
+}
+#photo-thumb:after {
+	content: '';
+	display: block;
+	clear: both !important;
+}
+.boe-app-icon {
+	margin: 5px !important;
+}
+.boe-app-img {
+	display: inline !important;
 }
 .card-title {
 	font-size: 1em !important;
