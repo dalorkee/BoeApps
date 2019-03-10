@@ -38,7 +38,9 @@ class indexController extends BoeAppsController {
 
 	public function launchApp(Request $request) {
 		$apps = App::find($request->id);
-		return redirect($apps->app_link);
+		header('Location:'.$apps->app_link);
+		return true;
+		//return redirect($apps->app_link);
 	}
 
 	/**
