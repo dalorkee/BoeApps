@@ -37,8 +37,7 @@ class indexController extends BoeAppsController {
 	}
 
 	public function launchApp(Request $request) {
-		$x = array('x');
-		dd($x);
+		dd($request);
 		$apps = App::find($request->id);
 		dd($apps);
 		return redirect()->away($apps->app_link);
