@@ -9,6 +9,6 @@
 <!-- Font Awesome CSS -->
 {{ Html::style('public/assets/font-awesome/css/font-awesome.min.css') }}
 <!-- Custom CSS -->
-{{ Html::style('public/css/boe_style.css?v=1.2') }}
+{{ Html::style('public/css/boe_style.css?v=1.3') }}
 {{ Html::style('public/assets/css/style.css?v=1.2') }}
 {{ Html::style('public/assets/plugins/fancybox-master/dist/jquery.fancybox.min.css') }}
