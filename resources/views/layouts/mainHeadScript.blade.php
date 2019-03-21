@@ -1,8 +1,8 @@
 <!-- Modernizr -->
-{{ Html::script('public/assets/js/modernizr.min.js') }}
+{{ Html::script('assets/js/modernizr.min.js') }}
 <!-- jQuery -->
-{{ Html::script('public/assets/js/jquery.min.js') }}
+{{ Html::script('assets/js/jquery.min.js') }}
 <!-- Moment -->
-{{ Html::script('public/assets/js/moment.min.js') }}
+{{ Html::script('assets/js/moment.min.js') }}
 <!-- fancybox -->
-{{ Html::script('public/assets/plugins/fancybox-master/dist/jquery.fancybox.min.js') }}
+{{ Html::script('assets/plugins/fancybox-master/dist/jquery.fancybox.min.js') }}
