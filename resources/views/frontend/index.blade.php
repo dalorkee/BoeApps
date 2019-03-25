@@ -31,7 +31,7 @@
 									<ol id="photo-thumb">
 										<li data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>">
 											<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank">
-												{{ Html::image('icons/boe_apps/'.$appVal->icon_name, 'alt=R506', ['class'=>'xx']) }}
+												{{ Html::image('ico/boe_apps/'.$appVal->icon_name, 'alt=icon', ['class'=>'xx']) }}
 											</a>
 										</li>
 									</ol>
