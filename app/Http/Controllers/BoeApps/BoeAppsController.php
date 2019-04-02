@@ -49,11 +49,16 @@ class BoeAppsController extends Controller {
 	}
 
 	protected function updateCounterDownloadFile($file_id=0, $count_value=0) {
-		DB::table('downloads')
+		$this->result = DB::table('downloads')
 			->where('id', $file_id)
 			->update(['download' => $count_value]);
 		return true;
 	}
 
-
+	protected function updateAppClicked($app_id=0, $new_clicked=0) {
+		$this->result = DB::table('apps')
+			->where('id', $app_id)
+			->update(['clicked' => $new_clicked]);
+		return true;
+	}
 }

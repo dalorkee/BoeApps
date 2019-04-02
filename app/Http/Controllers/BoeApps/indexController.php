@@ -13,14 +13,14 @@ class indexController extends BoeAppsController {
 	*/
 	public function index() {
 		$boeAppGroup = $this->getAppGroup();
-		$boeApps = $this->getApps();
-		//$file_upload = $this->getFiles();
+		$apps = $this->getApps();
+		$boeApps = $this->appsRating($apps);
 		Session::put('boeAppGroup', $boeAppGroup);
 		return view(
 			'frontend.index',
 			[
 				'page' => 'home',
-				'boeApps' => $boeApps
+				'boeApps' => $boeApps,
 			]
 		);
 	}
@@ -38,9 +38,43 @@ class indexController extends BoeAppsController {
 
 	public function launchApp(Request $request) {
 		$apps = App::find($request->id);
+		$new_clicked = ((int)$apps->clicked+1);
+		parent::updateAppClicked($request->id, $new_clicked);
 		return redirect()->away($apps->app_link);
-		//return redirect($apps->app_link);
 	}
+
+	private function sumAppsClicked($boeApps=null) {
+		$collect = $boeApps->map(function($item, $key) {
+			return $item->clicked;
+		});
+		return $collect->sum();
+	}
+
+
+
+	private function appsRating($boeApps=null, $star=5) {
+		$max = $boeApps->max('clicked');
+		foreach($boeApps as $key=>$item) {
+			$ratePercent = (($item->clicked*100)/$max);
+			if ($ratePercent <= 30) {
+				$rating = 1;
+			} elseif ($ratePercent > 30 && $ratePercent <= 49) {
+				$rating = 2;
+			} elseif ($ratePercent > 49 && $ratePercent <= 69) {
+				$rating = 3;
+			} elseif ($ratePercent > 69 && $ratePercent <= 89) {
+				$rating = 4;
+			} elseif ($ratePercent >= 90) {
+				$rating = 5;
+			} else {
+				$rating = 0;
+			}
+			$item->percent = $ratePercent;
+			$item->rating = $rating;
+		};
+		return $boeApps;
+	}
+
 
 	/**
 	* Show the form for creating a new resource.
@@ -84,7 +118,7 @@ class indexController extends BoeAppsController {
 	* @return \Illuminate\Http\Response
 	*/
 	public function update(Request $request, $id) {
-		//
+
 	}
 
 	/**

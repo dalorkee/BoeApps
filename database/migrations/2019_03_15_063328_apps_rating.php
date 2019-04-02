@@ -14,7 +14,8 @@ class AppsRating extends Migration
 	public function up() {
 		Schema::create('apps_rating', function (Blueprint $table) {
 			$table->increments('id');
-			$table->integer('apps_id');
+			$table->string('apps_id')->nullable();
+			$table->integer('rating')->default(0)->unsign();
 			$table->timestamps();
 		});
 	}

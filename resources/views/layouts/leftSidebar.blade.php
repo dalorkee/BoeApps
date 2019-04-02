@@ -4,7 +4,7 @@
 		<div id="sidebar-menu">
 			<ul>
 				<li class="submenu">
-					<a href="http://203.157.15.110/BoeApps/" class="pro"><i class="ion-grid" aria-hidden="true"></i><span> ALL Apps</span> </a>
+					<a href="{{ $_SERVER['HTTP_HOST'] }}" class="pro"><i class="ion-grid" aria-hidden="true"></i><span> ALL Apps</span> </a>
 				</li>
 				@foreach (Session::get('boeAppGroup') as $key => $value)
 					<li class="submenu">

@@ -7,10 +7,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Admin Template - For Talek team studio only">
-	<meta name="author" content="Talek team - https://www.talekteam.com">
+	<meta name="author" content="Talek team - https://www.talekteam.dev">
 	@include('layouts.mainStyle')
 	@yield('customStyle')
 	@include('layouts.mainHeadScript')
+	@yield('customHeadScript')
 </head>
 <body class="adminbody">
 	<div id="main">

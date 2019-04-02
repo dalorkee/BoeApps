@@ -1,5 +1,15 @@
 @extends('layouts.index')
 @section('customStyle')
+	{{ Html::style('assets/plugins/kartik-v-bootstrap-star-rating/css/star-rating.css') }}
+	{{ Html::style('assets/plugins/kartik-v-bootstrap-star-rating/themes/krajee-fa/theme.css') }}
+	{{ Html::style('assets/plugins/kartik-v-bootstrap-star-rating/themes/krajee-svg/theme.css') }}
+	{{ Html::style('assets/plugins/kartik-v-bootstrap-star-rating/themes/krajee-uni/theme.css') }}
+@endsection
+@section('customHeadScript')
+	{{ Html::script('assets/plugins/kartik-v-bootstrap-star-rating/js/star-rating.js') }}
+	{{ Html::script('assets/plugins/kartik-v-bootstrap-star-rating/themes/krajee-fa/theme.js') }}
+	{{ Html::script('assets/plugins/kartik-v-bootstrap-star-rating/themes/krajee-svg/theme.js') }}
+	{{ Html::script('assets/plugins/kartik-v-bootstrap-star-rating/themes/krajee-uni/theme.js') }}
 @endsection
 @section('content')
 <div class="content">
@@ -29,41 +39,15 @@
 							@if ($appVal->app_group_ref == $appGroupVal->id)
 								@if ($appVal->status == 'normal')
 									<ol id="photo-thumb">
-										<li data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>">
+										<li data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>" class="mb-4">
 											<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank">
 												{{ Html::image('ico/boe_apps/'.$appVal->icon_name, 'alt=icon', ['class'=>'xx']) }}
 											</a>
+											<form>
+												<input id="rating{{ $appVal->id }}" name="app-rating{{ $appVal->id }}" type="number" value="{{ $appVal->rating }}" class="kv-fa rating-loading">
+											</form>
 										</li>
 									</ol>
-
-									@if ($appVal->id == 24)
-										<!--
-										<div style="width:100%;">
-											<ul class="list-group list-group-flush" style="width:80%;margin-left:20px;">
-												<li class="list-group-item">
-													<i class="fa fa-angle-right" aria-hidden="true"></i>
-													<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab2" target="_blank">&nbsp;โปรแกรมเฝ้าระวัง</a>
-												</li>
-												<li class="list-group-item">
-													<i class="fa fa-angle-right" aria-hidden="true"></i>
-													<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab3" target="_blank">&nbsp;ข้อมูลประชากร</a>
-												</li>
-												<li class="list-group-item">
-													<i class="fa fa-angle-right" aria-hidden="true"></i>
-													<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab4" target="_blank">&nbsp;แบบฟอร์ม</a>
-												</li>
-												<li class="list-group-item">
-													<i class="fa fa-angle-right" aria-hidden="true"></i>
-													<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab5" target="_blank">&nbsp;แบบฟอร์มสอบสวนโรค</a>
-												</li>
-												<li class="list-group-item" style="border-bottom:none;">
-													<i class="fa fa-angle-right" aria-hidden="true"></i>
-													<a href="http://203.157.15.110/boe/software/downloadtab.php?#tab6" target="_blank">&nbsp;EIDSS</a>
-												</li>
-											</ul>
-										</div>
-										-->
-									@endif
 								@endif
 							@endif
 						@endforeach
@@ -77,11 +61,23 @@
 @endsection
 @section('customScript')
 <script>
-jQuery(function( $ ){
+$(document).ready(function($) {
 	$('#relative-selector').click(function() {
 		scrollTop: $('#Surveillance').offset().top
 	}, 800);
 	$('[data-toggle="tooltip"]').tooltip();
 });
+</script>
+<script>
+	$(document).ready(function() {
+		$('.kv-fa').rating({
+			showCaption: false,
+			theme: 'krajee-fa',
+			step: '1',
+			size: 'xs',
+			displayOnly: true
+
+		});
+	});
 </script>
 @endsection
