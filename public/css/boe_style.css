@@ -91,3 +91,27 @@ body {
 a.boe-link {
 	color: red !important;
 }
+.app-meta {
+	padding: 10px;
+	color: #262611;
+	background: #fff;
+}
+.text-faded {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  padding: 20px;
+}
+.text-faded:after {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background: linear-gradient(to left,
+     rgba(255,255,255, 1) 60%,
+     rgba(255,255,255, 0) 99%
+  );
+  pointer-events: none; /* so the text is still selectable */
+}

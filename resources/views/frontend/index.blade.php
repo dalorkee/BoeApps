@@ -43,15 +43,19 @@
 											<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank">
 												{{ Html::image('ico/boe_apps/'.$appVal->icon_name, 'alt=icon', ['class'=>'xx']) }}
 											</a>
-											<form>
-												<input id="rating{{ $appVal->id }}" name="app-rating{{ $appVal->id }}" type="number" value="{{ $appVal->rating }}" class="kv-fa rating-loading">
-											</form>
+											<div class="app-meta">
+												<h6>{{ mb_substr($appVal->name_en, 0, 15, 'UTF-8') }}</h6>
+												<form>
+													<input id="rating{{ $appVal->id }}" name="app-rating{{ $appVal->id }}" type="number" value="{{ $appVal->rating }}" class="kv-fa rating-loading">
+												</form>
+											</div>
+
 										</li>
 									</ol>
 								@endif
 							@endif
 						@endforeach
-						</div>
+					</div>
 					</div>
 				</div>
 			</div>
