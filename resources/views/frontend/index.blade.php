@@ -35,31 +35,35 @@
 							<h3 class="text-muted"><i class="{{ $appGroupVal->icon_name }}" aria-hidden="true"></i> {{ $appGroupVal->name_en }}</h3>
 						</div>
 						<div class="boe-app-body">
-						@foreach ($boeApps as $appKey => $appVal)
-							@if ($appVal->app_group_ref == $appGroupVal->id)
-								@if ($appVal->status == 'normal')
-									<ol id="photo-thumb">
-										<li class="mb-4">
-											<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank">
-												{{ Html::image('ico/boe_apps/'.$appVal->icon_name, 'alt=icon', ['class'=>'xx']) }}
-											</a>
-											<div class="app-meta">
-												<h6>
-													<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank" data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>">
-														{{ mb_substr($appVal->name_en, 0, 15, 'UTF-8') }}
-													</a>
-												</h6>
-												<form>
-													<input id="rating{{ $appVal->id }}" name="app-rating{{ $appVal->id }}" type="number" value="{{ $appVal->rating }}" class="kv-fa rating-loading">
-												</form>
-											</div>
+							@foreach ($boeApps as $appKey => $appVal)
+								@if ($appVal->app_group_ref == $appGroupVal->id)
+									@if ($appVal->status == 'normal')
+										<ol id="photo-thumb">
+											<li class="mb-4">
+												<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank">
+													{{ Html::image('ico/boe_apps/'.$appVal->icon_name, 'alt=icon', ['class'=>'xx']) }}
+												</a>
+												<div class="app-meta">
+													<h6>
+														<a href="{{ route('launch', ['id'=>$appVal->id]) }}" target="_blank" data-toggle="tooltip" data-html="true" title="<strong>{{ $appVal->desc }}</strong>">
+															{{ mb_substr($appVal->name_en, 0, 15, 'UTF-8') }}
+														</a>
+													</h6>
+													<form>
+														<input id="rating{{ $appVal->id }}" name="app-rating{{ $appVal->id }}" type="number" value="{{ $appVal->rating }}" class="kv-fa rating-loading">
+													</form>
+													<div class="app-view">
+														<span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+														<span>{{ number_format($appVal->clicked) }}</span>
+													</div>
 
-										</li>
-									</ol>
+												</div>
+											</li>
+										</ol>
+									@endif
 								@endif
-							@endif
-						@endforeach
-					</div>
+							@endforeach
+						</div>
 					</div>
 				</div>
 			</div>

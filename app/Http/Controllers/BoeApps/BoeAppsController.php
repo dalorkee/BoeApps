@@ -61,4 +61,11 @@ class BoeAppsController extends Controller {
 			->update(['clicked' => $new_clicked]);
 		return true;
 	}
+
+	protected function getAppsRow($app_id=0) {
+		$this->result = DB::table('apps')
+			->where('id', $app_id)
+			->get();
+		return $this->result;
+	}
 }

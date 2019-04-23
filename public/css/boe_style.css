@@ -97,21 +97,49 @@ a.boe-link {
 	background: #fff;
 }
 .text-faded {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-  padding: 20px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+	padding: 20px;
 }
 .text-faded:after {
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  content: "";
-  background: linear-gradient(to left,
-     rgba(255,255,255, 1) 60%,
-     rgba(255,255,255, 0) 99%
-  );
-  pointer-events: none; /* so the text is still selectable */
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	content: "";
+background: -webkit-linear-gradient(right, rgba(255,255,255, 1) 60%, rgba(255,255,255, 0) 99%);
+background: -o-linear-gradient(right, rgba(255,255,255, 1) 60%, rgba(255,255,255, 0) 99%);
+background: linear-gradient(to left, rgba(255,255,255, 1) 60%, rgba(255,255,255, 0) 99%);;
+	pointer-events: none; /* so the text is still selectable */
+}
+.app-view {
+	margin: 0;
+	padding: 2px;
+	display: block;
+	font-size: .80em;
+	font-style: normal;
+	background: #E5F6FB;
+}
+.app-view span:first-child {
+	float: left;
+	width: 30%;
+	padding: 2px 0 0 4px;
+	display: inline-block;
+	text-align: left;
+	color: #666;
+}
+.app-view span:last-child {
+	float: left;
+	width: 70%;
+	padding: 2px 4px 0 0;
+	display: inline-block;
+	text-align: right;
+	color: #aaa;
+}
+.app-view:after {
+	content: "";
+	display: block;
+	clear: both;
 }
